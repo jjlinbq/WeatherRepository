@@ -113,6 +113,7 @@
     <Compile Include="AndroidHUD.cs" />
     <Compile Include="AndroidToast.cs" />
     <Compile Include="ExitAndroid.cs" />
+    <Compile Include="IfNetWork\JudgeNet.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

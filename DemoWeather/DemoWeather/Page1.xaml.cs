@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using DemoWeather.JudgeNet;
 using Xamarin.Forms;
 
 namespace DemoWeather
@@ -14,6 +15,7 @@ namespace DemoWeather
         private IGetToast toast = DependencyService.Get<IGetToast>();
         private IExit exit = DependencyService.Get<IExit>();
         private IHUD hud = DependencyService.Get<IHUD>();
+        private IJudgeNetWorks judge = DependencyService.Get<IJudgeNetWorks>();
         private string SuggestStr;
         private string StrUrl = "";
         public Page1()
@@ -28,18 +30,24 @@ namespace DemoWeather
         /// <param name="e"></param>
         private void Sure_Btn_OnClicked(object sender, EventArgs e)
         {
+           
             List<WeatherInfo> weatherInfos;
            XmlReader xmlReaders;
-           
+            if (!judge.IsMobileConnected())
+            {
+                toast.GetToast("网络未连接，请检查网络！");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(CityName.Text))
             {
                 toast.GetToast("请输入城市地址！");
                 return;
             }
+            
            // string SCity = "福州";
              string SCity = CityName.Text;
             weatherInfos = new List<WeatherInfo>() { new WeatherInfo(), new WeatherInfo(), new WeatherInfo() };
-            string UrlCity = GetUrlEncoder.UrlEncode(SCity, "GB2312");
+            string UrlCity = GetUrlEncoder.UrlEncode(SCity, "GB2312");//
             StrUrl = "http://php.weather.sina.com.cn/xml.php?city=" + UrlCity + "&password=DJOYnieT8234jlsK&day=";
             XmlReaderSettings settings;
             settings = new XmlReaderSettings();
@@ -147,12 +155,6 @@ namespace DemoWeather
         /// <returns></returns>
         protected override bool OnBackButtonPressed()
         {
-            if(ExitBtn.IsVisible == true)
-            {
-                ExitBtn.IsVisible = false;
-                SuggestFrame.IsVisible = false;
-                return true;
-            }
             if (!date.HasValue || DateTime.Now - date.Value > new TimeSpan(0, 0, 2))
             {
                 toast.GetToast("再按一次退出程序");//选用Android底下的吐司，不会在这里卡住

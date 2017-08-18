@@ -44,8 +44,8 @@ namespace DemoWeather
                 return;
             }
             
-           // string SCity = "福州";
-             string SCity = CityName.Text;
+           
+            string SCity = CityName.Text;
             weatherInfos = new List<WeatherInfo>() { new WeatherInfo(), new WeatherInfo(), new WeatherInfo() };
             string UrlCity = GetUrlEncoder.UrlEncode(SCity, "GB2312");//
             StrUrl = "http://php.weather.sina.com.cn/xml.php?city=" + UrlCity + "&password=DJOYnieT8234jlsK&day=";
@@ -182,6 +182,31 @@ namespace DemoWeather
         {
             SuggestFrame.IsVisible = false;
             ExitBtn.IsVisible = false;
+            ShareFrame.IsVisible = false;
+        }
+
+        private void Share_Btn_OnClicked(object sender, EventArgs e)
+        {
+            ExitBtn.IsVisible = true;
+           
+            ShareFrame.IsVisible = true;
+            ShareStack.IsVisible = true;
+
+        }
+        private void FrameClose(object sender, EventArgs e)
+        {
+            ShareFrame.IsVisible = false;
+            ExitBtn.IsVisible = false;
+        }
+
+        private void ZoneShareBrn_OnClicked(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void FriendShareBtn_OnClicked(object sender, EventArgs e)
+        {
+           
         }
     }
 }

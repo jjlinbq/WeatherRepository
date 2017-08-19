@@ -115,7 +115,6 @@
     <Compile Include="ExitAndroid.cs" />
     <Compile Include="IfNetWork\JudgeNet.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="QZoneShareActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />

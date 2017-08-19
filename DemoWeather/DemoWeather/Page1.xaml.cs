@@ -20,7 +20,7 @@ namespace DemoWeather
         private IJudgeNetWorks judge = DependencyService.Get<IJudgeNetWorks>();
         private string SuggestStr;
         private string StrUrl = "";
-        
+        private string ShareStr;
         public Page1()
         {
             InitializeComponent();
@@ -46,8 +46,8 @@ namespace DemoWeather
                 toast.GetToast("请输入城市地址！");
                 return;
             }
-            
-           
+
+           // string SCity = "福州";
             string SCity = CityName.Text;
             weatherInfos = new List<WeatherInfo>() { new WeatherInfo(), new WeatherInfo(), new WeatherInfo() };
             string UrlCity = GetUrlEncoder.UrlEncode(SCity, "GB2312");//
@@ -84,6 +84,7 @@ namespace DemoWeather
                                 weatherInfos[i].Days = "后天";
                             }
                             weatherInfos[i].CityName = xmlReaders.ReadElementContentAsString();
+                            
                         }
                         if (xmlReaders.Name == "status1")
                         {
@@ -150,6 +151,7 @@ namespace DemoWeather
             lab.IsVisible = true;
             Suggest_Btn.IsVisible = true;
             ListCity.ItemsSource = weatherInfos;
+            ShareStr = weatherInfos[0].CityName + " " + weatherInfos[0].Days+" " +"天气："+weatherInfos[0].Weather+"温度：" + weatherInfos[0].TemperatureL;
             hud.Show_success("加载成功！");
         }
         /// <summary>
@@ -204,12 +206,12 @@ namespace DemoWeather
 
         private void ZoneShareBrn_OnClicked(object sender, EventArgs e)//分享至朋友圈
         {
-            wxShared.ShareToWX("哈哈哈", "Zone");
+            wxShared.ShareToWX(ShareStr, "Zone");
         }
 
         private void FriendShareBtn_OnClicked(object sender, EventArgs e)//分享给好友
         {
-            wxShared.ShareToWX("哈哈哈","Friends");
+            wxShared.ShareToWX(ShareStr,"Friends");
         }
     }
 }

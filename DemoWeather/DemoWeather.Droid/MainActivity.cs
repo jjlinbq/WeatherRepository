@@ -16,7 +16,7 @@ namespace DemoWeather.Droid
     {
         public static Context AppContext;
         public static IWXAPI wxApi;
-        public static readonly string APP_ID = "wxd930ea5d5a258f4f";
+        public static readonly string APP_ID = "wx44b2e6e0fb26fee3";
         protected override void OnCreate(Bundle bundle)
         {
             AppContext = ApplicationContext;

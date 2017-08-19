@@ -122,6 +122,7 @@
     <Compile Include="WxShareAn\AnWxShare.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="debug.keystore" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

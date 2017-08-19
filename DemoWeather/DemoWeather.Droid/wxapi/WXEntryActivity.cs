@@ -14,7 +14,7 @@ using Xamarin.Forms;
 
 namespace DemoWeather.Droid.wxapi
 {
-    [Activity(Label = "WXEntryActivity", Exported = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
+    [Activity(Label = "WXEntryActivity",Name = "demoWeather.wxapi.WXEntryActivity", Exported = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
     public class WXEntryActivity : Activity,IWXAPIEventHandler
     {
         public void OnReq(BaseReq p0)

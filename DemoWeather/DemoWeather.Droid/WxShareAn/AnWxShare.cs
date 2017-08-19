@@ -17,28 +17,20 @@ using Xamarin.Forms;
 namespace DemoWeather.Droid.WxShareAn
 {
     public class AnWxShare : IWxShared
-    {
-        public static MainActivity Mains = null;
-        public static string App_Id = MainActivity.APP_ID;
-        public static IWXAPI Wxapi;
+    { 
         void IWxShared.ShareToWX(string weatherInfo,string target)
         {
-            Wxapi = MainActivity.wxApi;
-            if (Wxapi==null)
-            {
-                Wxapi = WXAPIFactory.CreateWXAPI(Forms.Context, App_Id, true);
-            }
-            if (!Wxapi.IsWXAppInstalled)
+           
+            if (!MainActivity.wxApi.IsWXAppInstalled)
             {
                 Toast.MakeText(Forms.Context,"请先安装微信应用！",ToastLength.Short).Show();
                 return;
             }
-            if (!Wxapi.IsWXAppSupportAPI)
+            if (!MainActivity.wxApi.IsWXAppSupportAPI)
             {
                 Toast.MakeText(Forms.Context, "请先更新微信应用！", ToastLength.Short).Show();
                 return;
             }
-            Wxapi.RegisterApp(App_Id);
             WXTextObject text = new WXTextObject();
             text.Text = weatherInfo;
             WXMediaMessage message = new WXMediaMessage(text);
@@ -47,13 +39,13 @@ namespace DemoWeather.Droid.WxShareAn
             req.Message = message;
             if (target =="Friends")
             {
-                req.Scene = SendMessageToWX.Req.WXSceneTimeline;
+                req.Scene = SendMessageToWX.Req.WXSceneSession;
             }
            if (target =="Zone")
            {
-               req.Scene = SendMessageToWX.Req.WXSceneSession;
+               req.Scene = SendMessageToWX.Req.WXSceneTimeline;
            }
-            Wxapi.SendReq(req);
+            MainActivity.wxApi.SendReq(req);
         }
 
         private static string buildTransaction(string str)

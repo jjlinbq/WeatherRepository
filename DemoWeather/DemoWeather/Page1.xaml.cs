@@ -153,6 +153,7 @@ namespace DemoWeather
             ListCity.ItemsSource = weatherInfos;
             ShareStr = weatherInfos[0].CityName + " " + weatherInfos[0].Days+" " +"天气："+weatherInfos[0].Weather+"温度：" + weatherInfos[0].TemperatureL;
             hud.Show_success("加载成功！");
+            ShareBtn.IsEnabled = true;
         }
         /// <summary>
         /// 双击退出

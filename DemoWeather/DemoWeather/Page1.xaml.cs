@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using DemoWeather.iWX;
 using DemoWeather.JudgeNet;
 using Xamarin.Forms;
 
@@ -15,9 +16,11 @@ namespace DemoWeather
         private IGetToast toast = DependencyService.Get<IGetToast>();
         private IExit exit = DependencyService.Get<IExit>();
         private IHUD hud = DependencyService.Get<IHUD>();
+        private IWxShared wxShared = DependencyService.Get<IWxShared>();
         private IJudgeNetWorks judge = DependencyService.Get<IJudgeNetWorks>();
         private string SuggestStr;
         private string StrUrl = "";
+        
         public Page1()
         {
             InitializeComponent();
@@ -199,14 +202,14 @@ namespace DemoWeather
             ExitBtn.IsVisible = false;
         }
 
-        private void ZoneShareBrn_OnClicked(object sender, EventArgs e)
+        private void ZoneShareBrn_OnClicked(object sender, EventArgs e)//分享至朋友圈
         {
-          
+            wxShared.ShareToWX("哈哈哈", "Zone");
         }
 
-        private void FriendShareBtn_OnClicked(object sender, EventArgs e)
+        private void FriendShareBtn_OnClicked(object sender, EventArgs e)//分享给好友
         {
-           
+            wxShared.ShareToWX("哈哈哈","Friends");
         }
     }
 }

@@ -115,9 +115,12 @@
     <Compile Include="ExitAndroid.cs" />
     <Compile Include="IfNetWork\JudgeNet.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="QZoneShareActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="wxapi\WXEntryActivity.cs" />
+    <Compile Include="WxShareAn\AnWxShare.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -136,6 +139,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BDWeChatSDK\BDWeChatSDK.csproj">
+      <Project>{ba0fe578-1755-46ad-a56b-0217059a0634}</Project>
+      <Name>BDWeChatSDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DemoWeather\DemoWeather.csproj">
       <Project>{08AEE5E2-2EEF-4420-8CFD-37A2D9136FCB}</Project>
       <Name>DemoWeather</Name>
@@ -240,10 +247,10 @@
     <AndroidResource Include="Resources\drawable\shareimg.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\QQ.jpg" />
+    <AndroidResource Include="Resources\drawable\WeChat.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\QZone.jpg" />
+    <AndroidResource Include="Resources\drawable\ZoneFriends.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

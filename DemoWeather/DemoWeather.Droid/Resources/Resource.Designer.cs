@@ -3395,106 +3395,106 @@ namespace DemoWeather.Droid
 			public const int paper = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int QQ = 2130837606;
+			public const int roundedbg = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int QZone = 2130837607;
+			public const int roundedbgdark = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int roundedbg = 2130837608;
+			public const int shareimg = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int roundedbgdark = 2130837609;
+			public const int splash = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int shareimg = 2130837610;
+			public const int timg2 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int splash = 2130837611;
+			public const int weather_baoxueb = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int timg2 = 2130837612;
+			public const int weather_baoyub = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int weather_baoxueb = 2130837613;
+			public const int weather_dabaoyub = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int weather_baoyub = 2130837614;
+			public const int weather_daxueb = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int weather_dabaoyub = 2130837615;
+			public const int weather_dayub = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int weather_daxueb = 2130837616;
+			public const int weather_dongyub = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int weather_dayub = 2130837617;
+			public const int weather_duoyunb = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int weather_dongyub = 2130837618;
+			public const int weather_fuchenb = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int weather_duoyunb = 2130837619;
+			public const int weather_leizhenyub = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int weather_fuchenb = 2130837620;
+			public const int weather_leizhenyubanyoubingbaob = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int weather_leizhenyub = 2130837621;
+			public const int weather_maib = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int weather_leizhenyubanyoubingbaob = 2130837622;
+			public const int weather_qing = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int weather_maib = 2130837623;
+			public const int weather_qingb = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int weather_qing = 2130837624;
+			public const int weather_shachenbaob = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int weather_qingb = 2130837625;
+			public const int weather_tedabaoyub = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int weather_shachenbaob = 2130837626;
+			public const int weather_wub = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int weather_tedabaoyub = 2130837627;
+			public const int weather_xiaoxueb = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int weather_wub = 2130837628;
+			public const int weather_xiaoyub = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int weather_xiaoxueb = 2130837629;
+			public const int weather_yangshab = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int weather_xiaoyub = 2130837630;
+			public const int weather_yinb = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int weather_yangshab = 2130837631;
+			public const int weather_yujiaxueb = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int weather_yinb = 2130837632;
+			public const int weather_zhenxueb = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int weather_yujiaxueb = 2130837633;
+			public const int weather_zhenyub = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int weather_zhenxueb = 2130837634;
+			public const int weather_zhongxueb = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int weather_zhenyub = 2130837635;
+			public const int weather_zhongyub = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int weather_zhongxueb = 2130837636;
+			public const int WeatherIcon = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int weather_zhongyub = 2130837637;
+			public const int WeChat = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int WeatherIcon = 2130837638;
+			public const int zhongdaodayu = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int zhongdaodayu = 2130837639;
+			public const int ZoneFriends = 2130837639;
 			
 			static Drawable()
 			{

@@ -41,6 +41,7 @@
     <Compile Include="IGetToast.cs" />
     <Compile Include="IHUD.cs" />
     <Compile Include="ImageTemplate.cs" />
+    <Compile Include="iWX\iWXShared.cs" />
     <Compile Include="JudgeNet\IJudgeNetWorks.cs" />
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>

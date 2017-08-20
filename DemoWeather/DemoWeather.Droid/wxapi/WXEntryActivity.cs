@@ -14,7 +14,7 @@ using Xamarin.Forms;
 
 namespace DemoWeather.Droid.wxapi
 {
-    [Activity(Label = "WXEntryActivity",Name = "com.weather.report.wxapi.WXEntryActivity", Exported = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
+    [Activity(Label = "WXEntryActivity",Theme = "@android:style/Theme.Translucent",Name = "com.weather.report.wxapi.WXEntryActivity", Exported = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
     public class WXEntryActivity : Activity,IWXAPIEventHandler
     {
         public void OnReq(BaseReq p0)
@@ -30,17 +30,15 @@ namespace DemoWeather.Droid.wxapi
                 {
                     case BaseResp.ErrCode.ErrOk:
                         Device.BeginInvokeOnMainThread(()=>Toast.MakeText(Forms.Context,"分享成功",ToastLength.Long).Show());
-                        Finish();
                         break;
                     case BaseResp.ErrCode.ErrSentFailed:
-                        Device.BeginInvokeOnMainThread(() => Toast.MakeText(Forms.Context, "分享失败", ToastLength.Long).Show());
-                        Finish();
+                        Device.BeginInvokeOnMainThread(() => Toast.MakeText(Forms.Context, "分享失败", ToastLength.Long).Show());      
                         break;
-                    case BaseResp.ErrCode.ErrAuthDenied:
-                        Device.BeginInvokeOnMainThread(() => Toast.MakeText(Forms.Context, "取消分享", ToastLength.Long).Show());
-                        Finish();
+                    case BaseResp.ErrCode.ErrUserCancel:
+                        Device.BeginInvokeOnMainThread(() => Toast.MakeText(Forms.Context, "取消分享", ToastLength.Long).Show());    
                         break;
                 }
+                Finish();
             }
         }
 

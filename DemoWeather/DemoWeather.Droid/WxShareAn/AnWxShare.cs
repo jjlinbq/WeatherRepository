@@ -31,9 +31,11 @@ namespace DemoWeather.Droid.WxShareAn
                 Toast.MakeText(Forms.Context, "请先更新微信应用！", ToastLength.Short).Show();
                 return;
             }
-            WXTextObject text = new WXTextObject();
-            text.Text = weatherInfo;
-            WXMediaMessage message = new WXMediaMessage(text);
+            WXImageObject imageObject = new WXImageObject();
+            imageObject.ImagePath = "/storage/emulated/0/screenshot.png";
+            WXMediaMessage message = new WXMediaMessage();
+            message.mediaObject = imageObject;
+            message.Title = "天气预报";
             SendMessageToWX.Req req = new SendMessageToWX.Req();
             req.Transaction = buildTransaction("WeatherMessage");
             req.Message = message;

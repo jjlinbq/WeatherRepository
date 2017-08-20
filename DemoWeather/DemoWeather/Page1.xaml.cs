@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using DemoWeather.iWX;
 using DemoWeather.JudgeNet;
+using DemoWeather.ScreenShot;
 using Xamarin.Forms;
 
 namespace DemoWeather
@@ -18,6 +19,7 @@ namespace DemoWeather
         private IHUD hud = DependencyService.Get<IHUD>();
         private IWxShared wxShared = DependencyService.Get<IWxShared>();
         private IJudgeNetWorks judge = DependencyService.Get<IJudgeNetWorks>();
+        private IScreenShots shots = DependencyService.Get<IScreenShots>();
         private string SuggestStr;
         private string StrUrl = "";
         private string ShareStr;
@@ -151,7 +153,7 @@ namespace DemoWeather
             lab.IsVisible = true;
             Suggest_Btn.IsVisible = true;
             ListCity.ItemsSource = weatherInfos;
-            ShareStr = weatherInfos[0].CityName + " " + weatherInfos[0].Days+" " +"天气："+weatherInfos[0].Weather+"温度：" + weatherInfos[0].TemperatureL;
+            ShareStr = weatherInfos[0].CityName + " " + weatherInfos[0].Days+" " +"天气："+weatherInfos[0].Weather+" 温度：" + weatherInfos[0].TemperatureL;
             hud.Show_success("加载成功！");
             ShareBtn.IsEnabled = true;
         }
@@ -161,6 +163,13 @@ namespace DemoWeather
         /// <returns></returns>
         protected override bool OnBackButtonPressed()
         {
+            if (SuggestFrame.IsVisible==true||ExitBtn.IsVisible==true||ShareFrame.IsVisible==true)
+            {
+                SuggestFrame.IsVisible = false;
+                ExitBtn.IsVisible = false;
+                ShareFrame.IsVisible = false;
+                return true;
+            }
             if (!date.HasValue || DateTime.Now - date.Value > new TimeSpan(0, 0, 2))
             {
                 toast.GetToast("再按一次退出程序");//选用Android底下的吐司，不会在这里卡住
@@ -193,8 +202,8 @@ namespace DemoWeather
 
         private void Share_Btn_OnClicked(object sender, EventArgs e)
         {
+            shots.Screenshot();
             ExitBtn.IsVisible = true;
-           
             ShareFrame.IsVisible = true;
             ShareStack.IsVisible = true;
 

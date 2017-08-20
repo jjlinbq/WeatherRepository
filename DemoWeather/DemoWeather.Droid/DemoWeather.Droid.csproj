@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidHUD.cs" />
+    <Compile Include="AndroidScreenShots\ScreenShot.cs" />
     <Compile Include="AndroidToast.cs" />
     <Compile Include="ExitAndroid.cs" />
     <Compile Include="IfNetWork\JudgeNet.cs" />

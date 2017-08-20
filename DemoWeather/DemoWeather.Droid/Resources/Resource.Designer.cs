@@ -4950,6 +4950,9 @@ namespace DemoWeather.Droid
 			// aapt resource value: 0x7f0700ed
 			public const int Theme_AppCompat_NoActionBar = 2131165421;
 			
+			// aapt resource value: 0x7f070145
+			public const int Theme_EntryTheme = 2131165509;
+			
 			// aapt resource value: 0x7f070000
 			public const int Theme_MediaRouter = 2131165184;
 			

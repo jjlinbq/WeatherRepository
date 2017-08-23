@@ -44,6 +44,7 @@ namespace DemoWeather.Droid.IfNetWork
         public bool IsMobileConnected()
         {
             ConnectivityManager manager = ConnectivityManager.FromContext(MainActivity.AppContext);
+          
             NetworkInfo info = manager.GetNetworkInfo(ConnectivityType.Mobile);
             if (info!=null)
             {

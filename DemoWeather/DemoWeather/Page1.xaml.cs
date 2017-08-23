@@ -23,6 +23,7 @@ namespace DemoWeather
         private string SuggestStr;
         private string StrUrl = "";
         private string ShareStr;
+        private bool flag = false;
         public Page1()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace DemoWeather
            
             List<WeatherInfo> weatherInfos;
            XmlReader xmlReaders;
-            if (!judge.IsMobileConnected())
+            if (!judge.IsNetWorkConnected())
             {
                 toast.GetToast("网络未连接，请检查网络！");
                 return;
@@ -155,7 +156,7 @@ namespace DemoWeather
             ListCity.ItemsSource = weatherInfos;
             ShareStr = weatherInfos[0].CityName + " " + weatherInfos[0].Days+" " +"天气："+weatherInfos[0].Weather+" 温度：" + weatherInfos[0].TemperatureL;
             hud.Show_success("加载成功！");
-            ShareBtn.IsEnabled = true;
+            flag = true;
         }
         /// <summary>
         /// 双击退出
@@ -202,10 +203,17 @@ namespace DemoWeather
 
         private void Share_Btn_OnClicked(object sender, EventArgs e)
         {
-            shots.Screenshot();
-            ExitBtn.IsVisible = true;
-            ShareFrame.IsVisible = true;
-            ShareStack.IsVisible = true;
+            if (flag)
+            {
+                shots.Screenshot();
+                ExitBtn.IsVisible = true;
+                ShareFrame.IsVisible = true;
+                ShareStack.IsVisible = true;
+            }
+            else
+            {
+                toast.GetToast("请先查询，再分享");
+            }
 
         }
         private void FrameClose(object sender, EventArgs e)
